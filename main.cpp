@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
         window->init(500, 500);
 
         while (!window->isRunning()) {
-            window->createSurface(250, 250, );
+           // window->createSurface(250, 250, );
             window->update();
             window->displayFPS();
             
@@ -18,7 +18,6 @@ int main(int argc, char* argv[]) {
             SDL_RenderPresent(window->GetRenderer());
         }
         
-
 
 
         delete window;
