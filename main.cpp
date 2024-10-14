@@ -17,9 +17,7 @@ int main(int argc, char* argv[]) {
             SDL_RenderClear(window->GetRenderer());
             SDL_RenderPresent(window->GetRenderer());
         }
-        
-
-
+       
 
         delete window;
     }
