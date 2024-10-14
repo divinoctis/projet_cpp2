@@ -10,7 +10,7 @@ public:
 	int h;
 	virtual ~Window();
 	virtual void init(int width, int height) = 0;
-	virtual void createSurface(int width, int height, Uint32 format) = 0;
+	virtual void createSurface(int width, int height, SDL_PixelFormat format) = 0;
 	// virtual void clear() = 0;
 	virtual void update() = 0;
 	virtual bool isRunning() = 0;
