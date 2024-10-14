@@ -1,25 +1,26 @@
 #include <iostream>
 #include "SDLWindow.h"
 #include "SDLSprite.h"
+
 int main(int argc, char* argv[]) {
-    if (true) {
-        SDLWindow* window;
-        Sprite* wellyes;
-        window = new SDLWindow();
-        window->init(500, 500);
+    SDLWindow window;
+    window.init(500, 500);
 
-        while (!window->isRunning()) {
-            window->createSurface(250, 250,//);
-            window->update();
-            window->displayFPS();
-            
-            SDL_SetRenderDrawColor(window->GetRenderer(), 255, 0, 0, 255);
-            SDL_RenderClear(window->GetRenderer());
-            SDL_RenderPresent(window->GetRenderer());
+    bool running = true;
+    while (running) {
+        SDL_SetRenderDrawColor(window.GetRenderer(), 0, 0, 0, 255); 
+        SDL_RenderClear(window.GetRenderer());
+
+        SDL_SetRenderDrawColor(window.GetRenderer(), 255, 0, 0, 255); 
+        window.drawCircle(250, 250, 50);
+
+        window.displayFPS();
+
+        window.update();
+
+        if (window.isRunning()) {
+            running = false;
         }
-       
-
-        delete window;
     }
 
     return 0;

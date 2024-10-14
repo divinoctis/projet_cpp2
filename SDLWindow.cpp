@@ -10,6 +10,14 @@ SDLWindow::~SDLWindow()
 	SDL_Quit();
 }
 
+void SDLWindow::createSurface(int width, int height, Uint32 format) {
+	SDL_Surface* surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
+	if (surface == nullptr) {
+		std::cerr << "Surface could not be created! SDL_Error: " << SDL_GetError() << std::endl;
+	}
+	SDL_FreeSurface(surface);
+}
+
 void SDLWindow::init(int width, int height)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -56,9 +64,4 @@ SDL_Renderer* SDLWindow::GetRenderer() {
 void SDLWindow::setPosition(float x, float y)
 {
 	
-}
-
-void SDLWindow::createSurface(int width, int height, SDL_PixelFormat)
-{
-	SDL_Surface* SDL_CreateSurface(int width, int height, SDL_PixelFormat format);
 }
