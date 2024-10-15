@@ -26,3 +26,22 @@ void SDLSprite::drawCircle(float x, float y, float radius)
         }
     }
 }
+
+
+
+// post vector2
+
+void SDLSprite::updated(float deltatime)
+{
+    position += velocity * deltatime;
+
+    if (this->x - radius < 0 || this->x + radius > 800)
+    {
+        velocity.x = -velocity.x;
+    }
+
+    if (this->y - radius < 0 || this->y + radius > 600)
+    {
+        velocity.y = -velocity.y;
+    }
+}
