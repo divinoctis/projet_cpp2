@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SPRITE_H__
 #define SPRITE_H__
 

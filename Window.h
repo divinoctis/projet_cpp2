@@ -1,4 +1,3 @@
-#pragma once
 #ifndef WINDOW_H__
 #define WINDOW_H__
 #include <SDL2/SDL_pixels.h>

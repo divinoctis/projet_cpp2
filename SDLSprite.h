@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SDLSPRITE_H__
 #define SDLSPRITE_H__
 

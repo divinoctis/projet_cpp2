@@ -11,6 +11,7 @@ SDLWindow::~SDLWindow()
 }
 
 void SDLWindow::createSurface(int width, int height, SDL_PixelFormat format) {
+	SDL_Color color;
 	Uint32 r = 255;
 	Uint32 g = 0;
 	Uint32 b = 0;
@@ -36,6 +37,10 @@ void SDLWindow::init(int width, int height)
 		return;
 	}
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+	if (!renderer) {
+		std::cout << "bruh" << std::endl;
+	}
 }
 
 void SDLWindow::update() {

@@ -1,5 +1,5 @@
-#ifndef SDLWINDOW_H
-#define SDLWINDOW_H
+#ifndef SDLWINDOW_H__
+#define SDLWINDOW_H__
 
 #include "Window.h"
 #include "Sprite.h"
