@@ -10,7 +10,7 @@ class SDLWindow : public Window, public Sprite {
 public:
     SDLWindow();
     ~SDLWindow();
-    void init(int width, int height) override;
+    void init(int width, int height, const char* title) override;
     void update() override;
     bool isRunning() override;
     void displayFPS() override;

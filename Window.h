@@ -9,7 +9,7 @@ public:
 	int w;
 	int h;
 	virtual ~Window();
-	virtual void init(int width, int height) = 0;
+	virtual void init(int width, int height, const char* title) = 0;
 	virtual void createSurface(int width, int height, SDL_PixelFormat format) = 0;
 	// virtual void clear() = 0;
 	virtual void update() = 0;

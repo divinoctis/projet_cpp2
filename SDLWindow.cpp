@@ -11,7 +11,12 @@ SDLWindow::~SDLWindow()
 }
 
 void SDLWindow::createSurface(int width, int height, SDL_PixelFormat format) {
-	SDL_Surface* surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, format);
+	SDL_Color color;
+	Uint32 r = 255;
+	Uint32 g = 0;
+	Uint32 b = 0;
+	Uint32 a = 255;
+	SDL_Surface* surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, r);
 	if (surface == nullptr) {
 		std::cerr << "Surface could not be created! SDL_Error: " << SDL_GetError() << std::endl;
 	}
@@ -19,11 +24,10 @@ void SDLWindow::createSurface(int width, int height, SDL_PixelFormat format) {
 }
 
 
-void SDLWindow::init(int width, int height)
+void SDLWindow::init(int width, int height, const char* title)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
-		return;
+		std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;		return;
 	}
 
 	window = SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
@@ -50,7 +54,7 @@ bool SDLWindow::isRunning() {
 
 void SDLWindow::displayFPS() {
 	fps++;
-// à faire
+
 }
 void SDLWindow::drawCircle(float x, float y, float radius) {
 	SDLSprite sprite(renderer, x, y, radius);

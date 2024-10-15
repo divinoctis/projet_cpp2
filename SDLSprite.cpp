@@ -17,11 +17,11 @@ void SDLSprite::setPosition(float x, float y)
 void SDLSprite::drawCircle(float x, float y, float radius)
 {
     for (float w = 0; w < radius * 2; w++) {
-        for (float h = 0; h < radius * 2; h++) {
+       for (float h = 0; h < radius * 2; h++) {
             float dx = radius - w;
             float dy = radius - h;
             if ((dx * dx + dy * dy) <= (radius * radius)) {
-                SDL_RenderDrawPoint(renderer, static_cast<float>(x + dx), static_cast<float>(y + dy)); 
+               SDL_RenderDrawPoint(renderer, static_cast<float>(x + dx), static_cast<float>(y + dy)); 
             }
         }
     }
