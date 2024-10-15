@@ -138,6 +138,7 @@
     <ClCompile Include="SDLSprite.cpp" />
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,7 @@
     <ClInclude Include="SDLSprite.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
