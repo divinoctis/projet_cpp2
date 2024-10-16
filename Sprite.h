@@ -23,7 +23,7 @@
 class Sprite
 {
 public:
-    virtual ~Sprite() {}
+    virtual ~Sprite();
     virtual void setPosition(float x, float y) = 0;
     virtual void drawCircle(float x, float y, float radius) = 0;
     virtual void updated(float deltaTime) = 0;

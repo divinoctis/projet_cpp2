@@ -17,6 +17,7 @@ public:
     void drawCircle(float, float, float) override;
     void setPosition(float, float) override;
     void createSurface(int, int, SDL_PixelFormat format) override;
+    void updated(float deltaTime) override;
     SDL_Renderer* GetRenderer();
 private:
     SDL_Window* window;

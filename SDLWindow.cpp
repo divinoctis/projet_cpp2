@@ -75,3 +75,8 @@ void SDLWindow::setPosition(float x, float y)
 {
 	
 }
+
+void SDLWindow::updated(float deltaTime)
+{
+
+}
