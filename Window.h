@@ -7,6 +7,7 @@ class Window
 public:
 	int w;
 	int h;
+	Window();
 	virtual ~Window();
 	virtual void init(int width, int height) = 0;
 	virtual void createSurface(int width, int height, SDL_PixelFormat format) = 0;

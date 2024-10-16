@@ -6,7 +6,7 @@
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 
-class SDLWindow : public Window, public Sprite {
+class SDLWindow : public Window{
 public:
     SDLWindow();
     ~SDLWindow();
@@ -14,17 +14,13 @@ public:
     void update() override;
     bool isRunning() override;
     void displayFPS() override;
-    void drawCircle(float, float, float) override;
-    void setPosition(float, float) override;
     void createSurface(int, int, SDL_PixelFormat format) override;
-    void updated(float deltaTime) override;
     SDL_Renderer* GetRenderer();
 private:
     SDL_Window* window;
     SDL_Renderer* renderer;
     int fps;
-    Vector2 position;
-    Vector2 velocity;
+
 };
 
 #endif

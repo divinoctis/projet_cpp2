@@ -1,9 +1,10 @@
 #include <iostream>
 #include "SDLSprite.h"
-SDLSprite::SDLSprite(SDL_Renderer* _renderer, float _x, float _y, float _radius) : renderer(_renderer), x(_x), y(_y), radius(_radius), r(255), g(255), b(255), a(255)
+SDLSprite::SDLSprite(SDL_Renderer* _renderer, float _x, float _y, float _radius)
+    : renderer(_renderer), x(_x), y(_y), radius(_radius), r(255), g(255), b(255), a(255), xSpeed(100.0f), ySpeed(100.0f)
 {
-
 }
+
 
 SDLSprite::~SDLSprite() {}
 
@@ -21,27 +22,25 @@ void SDLSprite::drawCircle(float x, float y, float radius)
             float dx = radius - w;
             float dy = radius - h;
             if ((dx * dx + dy * dy) <= (radius * radius)) {
-                SDL_RenderDrawPoint(renderer, static_cast<float>(x + dx), static_cast<float>(y + dy)); 
+                SDL_RenderDrawPoint(renderer, static_cast<int>(this->x + dx), static_cast<int>(this->y + dy));
             }
         }
     }
 }
 
-
-
-// post vector2
-
-void SDLSprite::updated(float deltatime)
+void SDLSprite::updated(float deltaTime, float w, float h)
 {
-    position += velocity * deltatime;
 
-    if (this->x - radius < 0 || this->x + radius > 800)
-    {
-        velocity.x = -velocity.x;
-    }
+    x += xSpeed * deltaTime;
+    y += ySpeed * deltaTime;
 
-    if (this->y - radius < 0 || this->y + radius > 600)
-    {
-        velocity.y = -velocity.y;
+    if (x - radius <= 0 || x + radius >= w) {
+        xSpeed = -xSpeed;
+        x += xSpeed * deltaTime;
     }
+    if (y - radius <= 0 || y + radius >= h) {
+        ySpeed = -ySpeed;
+        y += ySpeed * deltaTime;
+    }
+    setPosition(x, y);
 }
