@@ -23,6 +23,8 @@ private:
     SDL_Window* window;
     SDL_Renderer* renderer;
     int fps;
+    Vector2 position;
+    Vector2 velocity;
 };
 
 #endif
