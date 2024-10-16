@@ -16,7 +16,6 @@ public:
     void displayFPS() override;
     void drawCircle(float, float, float) override;
     void setPosition(float, float) override;
-    void createSurface(int, int, SDL_PixelFormat format) override;
     SDL_Renderer* GetRenderer();
 private:
     SDL_Window* window;

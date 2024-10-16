@@ -7,56 +7,25 @@
 
 class RaylibWindow : public Window {
 public:
-    RaylibWindow(const char* title, int width, int height) {
-        init(width, height, title);
-    }
+    RaylibWindow(const char*, int, int);
 
-    void init(int width, int height, const char* title) override {
-        InitWindow(width, height, title);
-        SetTargetFPS(60);
-        w = width;
-        h = height;
-    }
+    void init(int, int, const char*) override;
 
-    void createSurface(int width, int height, SDL_PixelFormat format) override {
-        // Implémenter si nécessaire
-    }
+    void update() override;
 
-    void update() override {
-        if (shouldClose()) {
-            close();
-        }
-        // Autres mises à jour si nécessaire
-    }
+    bool isRunning() override;
 
-    bool isRunning() override {
-        return !shouldClose();
-    }
+    void displayFPS() override;
 
-    void displayFPS() override {
-        DrawText(TextFormat("FPS: %i", GetFPS()), 10, 10, 20, DARKGRAY);
-    }
+    void close();
 
-    void close() {
-        CloseWindow();
-    }
+    bool shouldClose();
 
-    bool shouldClose() {
-        return WindowShouldClose();
-    }
+    void beginDrawing();
 
-    void beginDrawing() {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-    }
+    void endDrawing();
 
-    void endDrawing() {
-        EndDrawing();
-    }
-
-    ~RaylibWindow() override {
-        close();
-    }
+    ~RaylibWindow() override;
 };
 
 #endif

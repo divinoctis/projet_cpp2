@@ -9,6 +9,7 @@ public:
 	virtual ~Sprite();
 	virtual void setPosition(float x, float y) = 0;
 	virtual void drawCircle(float x, float y, float radius) = 0;
+	virtual void moveCircle(float xSpeed, float ySpeed) = 0;
 };
 
 

@@ -10,18 +10,7 @@ SDLWindow::~SDLWindow()
 	SDL_Quit();
 }
 
-void SDLWindow::createSurface(int width, int height, SDL_PixelFormat format) {
-	SDL_Color color;
-	Uint32 r = 255;
-	Uint32 g = 0;
-	Uint32 b = 0;
-	Uint32 a = 255;
-	SDL_Surface* surface = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, r);
-	if (surface == nullptr) {
-		std::cerr << "Surface could not be created! SDL_Error: " << SDL_GetError() << std::endl;
-	}
-	SDL_FreeSurface(surface);
-}
+
 
 
 void SDLWindow::init(int width, int height, const char* title)

@@ -19,6 +19,7 @@ public:
     virtual ~SDLSprite();
     void setPosition(float x, float y) override;
     void drawCircle(float x, float y, float radius) override;
+    void moveCircle(float xSpeed, float ySpeed) override;
 
 };
 

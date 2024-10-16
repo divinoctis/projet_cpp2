@@ -26,3 +26,6 @@ void SDLSprite::drawCircle(float x, float y, float radius)
         }
     }
 }
+void SDLSprite::moveCircle(float xSpeed, float ySpeed) {
+
+}

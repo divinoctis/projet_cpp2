@@ -6,12 +6,14 @@
 #include "RaylibSprite.h"
 
 int main() {
-    RaylibWindow window("Titre de la fenêtre", 800, 600);
+    RaylibWindow window("well yes", 800, 600);
     RaylibSprite sprite;
+    sprite.setPosition(400, 300);  // Position initiale
+    sprite.setSpeed(5, 3);
     while (window.isRunning()) {
         window.beginDrawing();
         window.displayFPS();
-        sprite.drawCircle(250, 250, 15);
+        sprite.moveCircle(sprite.xSpeed, sprite.ySpeed);
         window.endDrawing();
         window.update();
     }

@@ -7,22 +7,16 @@
 
 class RaylibSprite : public Sprite {
 public:
-    RaylibSprite() {
-        
-    }
+    RaylibSprite();
 
-    void setPosition(float x, float y) override {
-        
-    }
-
-    void drawCircle(float x, float y, float radius) override {
-        
-        DrawCircle(static_cast<int>(x), static_cast<int>(y), radius, RED);
-    }
-
-    ~RaylibSprite() override {
-        
-    }
+    void setPosition(float x, float y) override;
+    void drawCircle(float x, float y, float radius) override;
+    void moveCircle(float, float) override;
+    void setSpeed(float xSpeed, float ySpeed);
+    ~RaylibSprite() override;
+    float x, y;         // Position du cercle
+    float xSpeed, ySpeed; // Vitesse du cercle
+    float radius;       // Rayon du cercle
 };
 
 #endif
